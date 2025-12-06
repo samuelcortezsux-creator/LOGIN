@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Autenticación</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="contenedor">
+        <!-- FORMULARIO DE REGISTRO -->
+        <div id="formRegistro" class="formulario activo">
+            <h2>Crear Cuenta</h2>
+            
+            <div class="mensaje" id="mensajeRegistro"></div>
+
+            <div class="campo">
+                <label>Nombre Completo:</label>
+                <input type="text" id="nombreRegistro" placeholder="Ej: Juan Pérez">
+                <div class="ayuda">Solo letras y espacios</div>
+            </div>
+
+            <div class="campo">
+                <label>Correo Electrónico:</label>
+                <input type="email" id="correoRegistro" placeholder="ejemplo@correo.com">
+                <div class="ayuda">Este será tu usuario</div>
+            </div>
+
+            <div class="campo">
+                <label>Número de Celular:</label>
+                <input type="tel" id="celularRegistro" placeholder="12345678">
+                <div class="ayuda"></div>
+            </div>
+
+            <div class="campo campo-password">
+                <label>Contraseña:</label>
+                <input type="password" id="passwordRegistro" placeholder="********">
+                <span class="mostrar-password" onclick="togglePassword('passwordRegistro')">👁️</span>
+                <div class="ayuda">Mínimo 6 caracteres, debe incluir mayúscula, minúscula, número y símbolo</div>
+            </div>
+
+            <button class="boton" onclick="registrarUsuario()">Crear Cuenta</button>
+
+            <div class="enlaces">
+                <p>¿Ya tienes cuenta? <span class="enlace" onclick="mostrarFormulario('login')">Inicia Sesión</span></p>
+            </div>
+        </div>
+
+        <!-- FORMULARIO DE INICIO DE SESIÓN -->
+        <div id="formLogin" class="formulario">
+            <h2>Iniciar Sesión</h2>
+            
+            <div class="mensaje" id="mensajeLogin"></div>
+
+            <div class="campo">
+                <label>Correo Electrónico:</label>
+                <input type="email" id="correoLogin" placeholder="ejemplo@correo.com">
+            </div>
+
+            <div class="campo campo-password">
+                <label>Contraseña:</label>
+                <input type="password" id="passwordLogin" placeholder="********">
+                <span class="mostrar-password" onclick="togglePassword('passwordLogin')">👁️</span>
+            </div>
+
+            <button class="boton" onclick="iniciarSesion()">Entrar</button>
+
+            <div class="enlaces">
+                <p><span class="enlace" id="enlaceRecuperar" onclick="mostrarFormulario('recuperar')" style="display:none;">Recuperar Contraseña</span></p>
+                <p>¿No tienes cuenta? <span class="enlace" onclick="mostrarFormulario('registro')">Regístrate</span></p>
+            </div>
+        </div>
+
+        <!-- FORMULARIO DE RECUPERACIÓN -->
+        <div id="formRecuperar" class="formulario">
+            <h2>Recuperar Contraseña</h2>
+            
+            <div class="mensaje" id="mensajeRecuperar"></div>
+
+            <div class="campo">
+                <label>Correo Electrónico:</label>
+                <input type="email" id="correoRecuperar" placeholder="ejemplo@correo.com">
+            </div>
+
+            <div class="campo campo-password">
+                <label>Nueva Contraseña:</label>
+                <input type="password" id="nuevaPassword" placeholder="********">
+                <span class="mostrar-password" onclick="togglePassword('nuevaPassword')">👁️</span>
+                <div class="ayuda">Mínimo 6 caracteres, debe incluir mayúscula, minúscula, número y símbolo</div>
+            </div>
+
+            <button class="boton" onclick="recuperarPassword()">Actualizar Contraseña</button>
+
+            <div class="enlaces">
+                <p><span class="enlace" onclick="mostrarFormulario('login')">Volver al Login</span></p>
+            </div>
+        </div>
+
+        <!-- PANTALLA DE BIENVENIDA -->
+        <div id="formBienvenida" class="formulario">
+            <h2>¡Bienvenido!</h2>
+            <div class="mensaje exito activo" id="mensajeBienvenida"></div>
+            <button class="boton" onclick="cerrarSesion()">Cerrar Sesión</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

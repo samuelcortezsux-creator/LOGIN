@@ -1,0 +1,148 @@
+/* Estilos básicos para toda la página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.contenedor {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 450px;
+}
+
+h2 {
+    color: #667eea;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Estilos para los formularios */
+.formulario {
+    display: none;
+}
+
+.formulario.activo {
+    display: block;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* Contenedor para mostrar/ocultar contraseña */
+.campo-password {
+    position: relative;
+}
+
+.mostrar-password {
+    position: absolute;
+    right: 10px;
+    top: 38px;
+    cursor: pointer;
+    user-select: none;
+    color: #667eea;
+}
+
+/* Botones */
+.boton {
+    width: 100%;
+    padding: 12px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.boton:hover {
+    background: #5568d3;
+}
+
+/* Mensajes de error y éxito */
+.mensaje {
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.mensaje.activo {
+    display: block;
+}
+
+.mensaje.error {
+    background: #fee;
+    color: #c33;
+    border: 1px solid #fcc;
+}
+
+.mensaje.exito {
+    background: #efe;
+    color: #3c3;
+    border: 1px solid #cfc;
+}
+
+/* Enlaces */
+.enlaces {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.enlace {
+    color: #667eea;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.enlace:hover {
+    color: #5568d3;
+}
+
+/* Pequeño texto de ayuda */
+.ayuda {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
